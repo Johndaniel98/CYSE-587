@@ -1,758 +1,141 @@
 {
-  "version": "2.4.1",
   "summary": {
     "title": "Airport Surveillance System",
-    "owner": "John Daniel Iruthayasamy",
-    "description": "IoT-based airport surveillance using MQTT, RTSP, Raspberry Pi, and Arduino",
-    "id": 0
+    "owner": "John",
+    "description": "IoT-based airport surveillance system using MQTT, RTSP, Raspberry Pi, and Arduino.",
+    "version": "1.0"
   },
   "detail": {
-    "contributors": [],
-    "diagrams": [
-      {
-        "id": 2,
-        "title": "New STRIDE diagram",
-        "diagramType": "STRIDE",
-        "placeholder": "New STRIDE diagram description",
-        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "version": "2.4.1",
-        "cells": [
-          {
-            "position": {
-              "x": 60,
-              "y": -200
-            },
-            "size": {
-              "width": 180,
-              "height": 120
-            },
-            "attrs": {
-              "text": {
-                "text": "Authorized User"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "actor",
-            "zIndex": 1,
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "44e46d1b-62b8-467f-8e91-595acbee764f"
-                },
-                {
-                  "group": "right",
-                  "id": "92b9963f-3db6-49c7-b1c3-7b6cd5381879"
-                },
-                {
-                  "group": "bottom",
-                  "id": "85395156-644e-4521-9a24-c9237aaabaed"
-                },
-                {
-                  "group": "left",
-                  "id": "00fcdac5-2240-4881-90ec-12864dcbac3e"
-                }
-              ]
-            },
-            "id": "9d43f10b-0251-42bc-9be3-59dfd60a64af",
-            "data": {
-              "type": "tm.Actor",
-              "name": "Authorized User",
-              "description": "Airport security officers or administrators who interact with the system via the web page to monitor live footage, control camera angles, and receive alerts.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "providesAuthentication": false,
-              "threats": []
-            }
+    "diagram": {
+      "cells": [
+        {
+          "id": "AuthorizedUser",
+          "type": "tm.Actor",
+          "position": {
+            "x": 100,
+            "y": 100
           },
-          {
-            "position": {
-              "x": 433,
-              "y": -195
-            },
-            "size": {
-              "width": 140,
-              "height": 110
-            },
-            "attrs": {
-              "text": {
-                "text": "Web\nApplication"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "process",
-            "zIndex": 2,
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "f6d98d56-0e7a-4def-bdf8-62c348c8947f"
-                },
-                {
-                  "group": "right",
-                  "id": "9a0687ce-c813-4499-a197-7d8b2b58f6b0"
-                },
-                {
-                  "group": "bottom",
-                  "id": "f5734665-303a-4481-928b-7bd7a61c2443"
-                },
-                {
-                  "group": "left",
-                  "id": "af166508-4b0c-412b-b776-59a8db411d85"
-                }
-              ]
-            },
-            "id": "e2e728d8-d1e9-43ae-af76-3df29a6f3742",
-            "data": {
-              "type": "tm.Process",
-              "name": "Web\nApplication",
-              "description": "A web page hosted on the Raspberry Pi 4B, displaying live RTSP video streams from camera nodes and allowing users to send camera control commands via MQTT.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
-              "isWebApplication": false,
-              "privilegeLevel": "",
-              "threats": []
-            }
+          "name": "Authorized User"
+        },
+        {
+          "id": "WebApp",
+          "type": "tm.Process",
+          "position": {
+            "x": 300,
+            "y": 100
           },
-          {
-            "position": {
-              "x": 818,
-              "y": -185
-            },
-            "size": {
-              "width": 100,
-              "height": 90
-            },
-            "attrs": {
-              "text": {
-                "text": "MQTT\nBroker"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "process",
-            "zIndex": 3,
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "f6d98d56-0e7a-4def-bdf8-62c348c8947f"
-                },
-                {
-                  "group": "right",
-                  "id": "9a0687ce-c813-4499-a197-7d8b2b58f6b0"
-                },
-                {
-                  "group": "bottom",
-                  "id": "f5734665-303a-4481-928b-7bd7a61c2443"
-                },
-                {
-                  "group": "left",
-                  "id": "af166508-4b0c-412b-b776-59a8db411d85"
-                }
-              ]
-            },
-            "id": "959b2e59-b056-4cb9-b79b-43e069993aa5",
-            "data": {
-              "type": "tm.Process",
-              "name": "MQTT\nBroker",
-              "description": "Mosquitto MQTT broker running on the Raspberry Pi 4B, facilitating publish/subscribe messaging between the web application and camera nodes.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
-              "isWebApplication": false,
-              "privilegeLevel": "",
-              "threats": []
-            }
+          "name": "Web Application"
+        },
+        {
+          "id": "MQTTBroker",
+          "type": "tm.Process",
+          "position": {
+            "x": 500,
+            "y": 100
           },
-          {
-            "position": {
-              "x": 753,
-              "y": 80
-            },
-            "size": {
-              "width": 230,
-              "height": 150
-            },
-            "attrs": {
-              "text": {
-                "text": "Camera Nodes\n1,2,3"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "process",
-            "zIndex": 4,
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "f6d98d56-0e7a-4def-bdf8-62c348c8947f"
-                },
-                {
-                  "group": "right",
-                  "id": "9a0687ce-c813-4499-a197-7d8b2b58f6b0"
-                },
-                {
-                  "group": "bottom",
-                  "id": "f5734665-303a-4481-928b-7bd7a61c2443"
-                },
-                {
-                  "group": "left",
-                  "id": "af166508-4b0c-412b-b776-59a8db411d85"
-                }
-              ]
-            },
-            "id": "347f0875-ac00-4c27-b9c2-0292d25ba430",
-            "data": {
-              "type": "tm.Process",
-              "name": "Camera Nodes\n1,2,3",
-              "description": "Each camera node consists of a Raspberry Pi Zero 2 W (running Motion for video streaming, acting as an MQTT subscriber), an Arduino Nano (controlling servo motors), servo motors (for pan/tilt), and a Raspberry Pi camera (capturing video).",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
-              "isWebApplication": false,
-              "privilegeLevel": "",
-              "threats": []
-            }
+          "name": "MQTT Broker"
+        },
+        {
+          "id": "CameraNode1",
+          "type": "tm.Process",
+          "position": {
+            "x": 700,
+            "y": 100
           },
-          {
-            "position": {
-              "x": 393,
-              "y": 110
-            },
-            "size": {
-              "width": 200,
-              "height": 90
-            },
-            "attrs": {
-              "text": {
-                "text": "Recorded \nFootage Store"
-              },
-              "topLine": {
-                "strokeWidth": 1.5,
-                "strokeDasharray": null
-              },
-              "bottomLine": {
-                "strokeWidth": 1.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "store",
-            "zIndex": 5,
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "2e4b1b6d-46b9-4730-bd28-04f43c490d47"
-                },
-                {
-                  "group": "right",
-                  "id": "b9deb945-0917-406c-b88d-06b8b0a6f2f9"
-                },
-                {
-                  "group": "bottom",
-                  "id": "7b8d3751-cdae-4a3f-8a82-f8ee6a5772dd"
-                },
-                {
-                  "group": "left",
-                  "id": "7b6e5e63-ae47-42e6-b647-8292a50bfcee"
-                }
-              ]
-            },
-            "id": "fc366e76-93ec-45e9-8654-768139ae5707",
-            "data": {
-              "type": "tm.Store",
-              "name": "Recorded \nFootage Store",
-              "description": "Stores recorded video footage from the camera nodes, managed by the Motion application on the Raspberry Pi 4B.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isALog": false,
-              "isEncrypted": false,
-              "isSigned": false,
-              "storesCredentials": false,
-              "storesInventory": false,
-              "threats": []
-            }
+          "name": "Camera Node 1"
+        },
+        {
+          "id": "CameraNode2",
+          "type": "tm.Process",
+          "position": {
+            "x": 900,
+            "y": 100
           },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "MQTT Messages \n(Broker to Camera Nodes)",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "MQTT Messages \n(Broker to Camera Nodes)"
-            ],
-            "id": "4f41b45b-63a6-41b5-9b36-26389c79d35f",
-            "source": {
-              "cell": "959b2e59-b056-4cb9-b79b-43e069993aa5",
-              "port": "f5734665-303a-4481-928b-7bd7a61c2443"
-            },
-            "target": {
-              "cell": "347f0875-ac00-4c27-b9c2-0292d25ba430",
-              "port": "f6d98d56-0e7a-4def-bdf8-62c348c8947f"
-            },
-            "vertices": []
+          "name": "Camera Node 2"
+        },
+        {
+          "id": "CameraNode3",
+          "type": "tm.Process",
+          "position": {
+            "x": 1100,
+            "y": 100
           },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "User Input",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "User Input"
-            ],
-            "id": "b8ad4819-6143-4283-9bcd-43bb36cd32b0",
-            "source": {
-              "cell": "9d43f10b-0251-42bc-9be3-59dfd60a64af",
-              "port": "92b9963f-3db6-49c7-b1c3-7b6cd5381879"
-            },
-            "target": {
-              "cell": "e2e728d8-d1e9-43ae-af76-3df29a6f3742",
-              "port": "af166508-4b0c-412b-b776-59a8db411d85"
-            },
-            "vertices": []
+          "name": "Camera Node 3"
+        },
+        {
+          "id": "RaspberryPi",
+          "type": "tm.Process",
+          "position": {
+            "x": 700,
+            "y": 300
           },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "MQTT Messages\n(Web App to Broker)",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "MQTT Messages\n(Web App to Broker)"
-            ],
-            "id": "6249c736-12bb-4e8b-b3ad-b7d2dc462e7b",
-            "source": {
-              "x": 561,
-              "y": -140
-            },
-            "target": {
-              "cell": "959b2e59-b056-4cb9-b79b-43e069993aa5",
-              "port": "af166508-4b0c-412b-b776-59a8db411d85"
-            },
-            "vertices": []
+          "name": "Raspberry Pi Zero 2 W"
+        },
+        {
+          "id": "ArduinoNano",
+          "type": "tm.Process",
+          "position": {
+            "x": 900,
+            "y": 300
+          },
+          "name": "Arduino Nano"
+        },
+        {
+          "id": "ServoMotors",
+          "type": "tm.Store",
+          "position": {
+            "x": 1100,
+            "y": 300
+          },
+          "name": "Servo Motors"
+        },
+        {
+          "id": "RecordedFootageStore",
+          "type": "tm.Store",
+          "position": {
+            "x": 500,
+            "y": 300
+          },
+          "name": "Recorded Footage Store"
+        },
+        {
+          "id": "TrustBoundary",
+          "type": "tm.Boundary",
+          "name": "Private Network",
+          "bounds": {
+            "x": 250,
+            "y": 50,
+            "width": 950,
+            "height": 300
           }
-        ]
+        }
+      ]
+    },
+    "threats": [
+      {
+        "target": "WebApp",
+        "type": "Spoofing",
+        "title": "Authentication Bypass",
+        "description": "An attacker could bypass authentication controls to access the web application.",
+        "mitigation": "Implement strong authentication methods."
+      },
+      {
+        "target": "MQTTBroker",
+        "type": "Tampering",
+        "title": "Message Injection",
+        "description": "An attacker could inject malicious MQTT messages.",
+        "mitigation": "Use TLS for secure MQTT communication."
+      },
+      {
+        "target": "CameraNode1",
+        "type": "Information Disclosure",
+        "title": "Unauthorized Video Access",
+        "description": "An attacker could intercept video streams.",
+        "mitigation": "Encrypt RTSP streams."
       }
     ],
-    "diagramTop": 3,
-    "reviewer": "",
-    "threatTop": 2
-  }
+    "diagramTop": 15,
+    "threatTop": 100
+  },
+  "version": "2.4.1"
 }
