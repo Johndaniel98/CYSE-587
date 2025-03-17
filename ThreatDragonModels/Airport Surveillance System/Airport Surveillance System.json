@@ -38,6 +38,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "9d43f10b-0251-42bc-9be3-59dfd60a64af",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Authorized User",
@@ -154,6 +154,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -237,7 +238,6 @@
               ]
             },
             "id": "e2e728d8-d1e9-43ae-af76-3df29a6f3742",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Web\nApplication",
@@ -273,6 +273,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -356,7 +357,6 @@
               ]
             },
             "id": "959b2e59-b056-4cb9-b79b-43e069993aa5",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "MQTT\nBroker",
@@ -392,6 +392,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -475,7 +476,6 @@
               ]
             },
             "id": "347f0875-ac00-4c27-b9c2-0292d25ba430",
-            "zIndex": 4,
             "data": {
               "type": "tm.Process",
               "name": "Camera Nodes\n1,2,3",
@@ -514,6 +514,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -597,7 +598,6 @@
               ]
             },
             "id": "fc366e76-93ec-45e9-8654-768139ae5707",
-            "zIndex": 5,
             "data": {
               "type": "tm.Store",
               "name": "Recorded \nFootage Store",
