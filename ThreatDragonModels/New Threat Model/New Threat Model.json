@@ -1,26 +1,102 @@
-{
-  "version": "2.4.1",
-  "summary": {
-    "title": "New Threat Model",
-    "owner": "",
-    "description": "",
-    "id": 0
+ "summary": {
+    "title": "Airport Surveillance System",
+    "owner": "Your Name",
+    "description": "IoT-based airport surveillance system using MQTT, RTSP, Raspberry Pi, and Arduino.",
+    "version": "1.0"
   },
   "detail": {
-    "contributors": [],
-    "diagrams": [
+    "diagram": {
+      "cells": [
+        {
+          "id": "AuthorizedUser",
+          "type": "tm.Actor",
+          "position": { "x": 100, "y": 100 },
+          "name": "Authorized User"
+        },
+        {
+          "id": "WebApp",
+          "type": "tm.Process",
+          "position": { "x": 300, "y": 100 },
+          "name": "Web Application"
+        },
+        {
+          "id": "MQTTBroker",
+          "type": "tm.Process",
+          "position": { "x": 500, "y": 100 },
+          "name": "MQTT Broker"
+        },
+        {
+          "id": "CameraNode1",
+          "type": "tm.Process",
+          "position": { "x": 700, "y": 100 },
+          "name": "Camera Node 1"
+        },
+        {
+          "id": "CameraNode2",
+          "type": "tm.Process",
+          "position": { "x": 900, "y": 100 },
+          "name": "Camera Node 2"
+        },
+        {
+          "id": "CameraNode3",
+          "type": "tm.Process",
+          "position": { "x": 1100, "y": 100 },
+          "name": "Camera Node 3"
+        },
+        {
+          "id": "RaspberryPi",
+          "type": "tm.Process",
+          "position": { "x": 700, "y": 300 },
+          "name": "Raspberry Pi Zero 2 W"
+        },
+        {
+          "id": "ArduinoNano",
+          "type": "tm.Process",
+          "position": { "x": 900, "y": 300 },
+          "name": "Arduino Nano"
+        },
+        {
+          "id": "ServoMotors",
+          "type": "tm.Store",
+          "position": { "x": 1100, "y": 300 },
+          "name": "Servo Motors"
+        },
+        {
+          "id": "RecordedFootageStore",
+          "type": "tm.Store",
+          "position": { "x": 500, "y": 300 },
+          "name": "Recorded Footage Store"
+        },
+        {
+          "id": "TrustBoundary",
+          "type": "tm.Boundary",
+          "name": "Private Network",
+          "bounds": { "x": 250, "y": 50, "width": 950, "height": 300 }
+        }
+      ]
+    },
+    "threats": [
       {
-        "id": 0,
-        "title": "New STRIDE diagram",
-        "diagramType": "STRIDE",
-        "placeholder": "New STRIDE diagram description",
-        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "version": "2.4.1",
-        "cells": []
+        "target": "WebApp",
+        "type": "Spoofing",
+        "title": "Authentication Bypass",
+        "description": "An attacker could bypass authentication controls to access the web application.",
+        "mitigation": "Implement strong authentication methods."
+      },
+      {
+        "target": "MQTTBroker",
+        "type": "Tampering",
+        "title": "Message Injection",
+        "description": "An attacker could inject malicious MQTT messages.",
+        "mitigation": "Use TLS for secure MQTT communication."
+      },
+      {
+        "target": "CameraNode1",
+        "type": "Information Disclosure",
+        "title": "Unauthorized Video Access",
+        "description": "An attacker could intercept video streams.",
+        "mitigation": "Encrypt RTSP streams."
       }
-    ],
-    "diagramTop": 1,
-    "reviewer": "",
-    "threatTop": 0
+    ]
   }
 }
