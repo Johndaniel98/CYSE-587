@@ -1,0 +1,16 @@
+{
+  "version": "2.4.1",
+  "summary": {
+    "title": "Airport Surveillance System",
+    "owner": "John Daniel Iruthayasamy",
+    "description": "IoT-based airport surveillance using MQTT, RTSP, Raspberry Pi, and Arduino",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "diagramTop": 2,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
