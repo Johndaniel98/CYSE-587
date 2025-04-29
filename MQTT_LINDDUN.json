@@ -1,0 +1,113 @@
+{
+  "summary": "LINDDUN Threat Model for MQTT Disaster Scenario",
+  "detail": "Threat model applying LINDDUN to Victim-MQTT Broker-C2 communication",
+  "elements": [
+    {
+      "id": "1",
+      "name": "Victim Device",
+      "type": "ExternalEntity",
+      "description": "Sends distress messages"
+    },
+    {
+      "id": "2",
+      "name": "MQTT Broker",
+      "type": "Process",
+      "description": "Relays messages from Victim to C2"
+    },
+    {
+      "id": "3",
+      "name": "C2 System",
+      "type": "ExternalEntity",
+      "description": "Receives and processes distress messages"
+    },
+    {
+      "id": "4",
+      "name": "Broker Message Cache",
+      "type": "DataStore",
+      "description": "Temporarily stores distress messages"
+    },
+    {
+      "id": "5",
+      "name": "Distress Message",
+      "type": "DataFlow",
+      "source": "1",
+      "target": "2",
+      "description": "Publish ID, GPS, status"
+    },
+    {
+      "id": "6",
+      "name": "Forwarded Message",
+      "type": "DataFlow",
+      "source": "2",
+      "target": "3",
+      "description": "Forward distress message to C2"
+    },
+    {
+      "id": "7",
+      "name": "Broker Cache Storage",
+      "type": "DataFlow",
+      "source": "2",
+      "target": "4",
+      "description": "Store distress message temporarily"
+    }
+  ],
+  "trustZones": [],
+  "threats": [
+    {
+      "id": "T1",
+      "title": "Linkability via Static Topics",
+      "description": "Victim messages linked over time due to static topic and ID",
+      "elementId": "5",
+      "type": "Linkability"
+    },
+    {
+      "id": "T2",
+      "title": "Identifiability via ID and GPS",
+      "description": "Victim identifiable through casualty ID and precise location",
+      "elementId": "5",
+      "type": "Identifiability"
+    },
+    {
+      "id": "T3",
+      "title": "Detectability through Traffic Patterns",
+      "description": "Message frequency reveals activity of victims",
+      "elementId": "5",
+      "type": "Detectability"
+    },
+    {
+      "id": "T4",
+      "title": "Disclosure of Information",
+      "description": "Cleartext messages can be intercepted",
+      "elementId": "5",
+      "type": "DisclosureOfInformation"
+    },
+    {
+      "id": "T5",
+      "title": "Non-repudiation Risk",
+      "description": "Victims cannot deny sending messages",
+      "elementId": "2",
+      "type": "NonRepudiation"
+    },
+    {
+      "id": "T6",
+      "title": "Disclosure in Broker Storage",
+      "description": "Cached messages at Broker may leak",
+      "elementId": "4",
+      "type": "DisclosureOfInformation"
+    },
+    {
+      "id": "T7",
+      "title": "Victim Unawareness",
+      "description": "Victims unaware of the risks and processing of their data",
+      "elementId": "1",
+      "type": "Unawareness"
+    },
+    {
+      "id": "T8",
+      "title": "Non-compliance with Privacy Regulations",
+      "description": "System does not minimize data, lacks user consent",
+      "elementId": "2",
+      "type": "NonCompliance"
+    }
+  ]
+}
